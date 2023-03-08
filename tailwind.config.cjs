@@ -1,4 +1,3 @@
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	// 1. Apply the dark mode class setting:
@@ -9,11 +8,14 @@ module.exports = {
 		require('path').join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')
 	],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				tbp: '#501098'
+			}
+		}
 	},
 	plugins: [
 		// 3. Append the Skeleton plugin to the end of this list
 		...require('@skeletonlabs/skeleton/tailwind/skeleton.cjs')()
 	]
-}
-			
+};

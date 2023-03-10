@@ -1,5 +1,6 @@
 <script>
-	import { AppShell } from '@skeletonlabs/skeleton';
+	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
+
 	import { AppRail } from '@skeletonlabs/skeleton';
 	import { AppRailTile } from '@skeletonlabs/skeleton';
 	import { writable } from 'svelte/store';
@@ -10,8 +11,8 @@
 </script>
 
 <AppShell>
-	<svelte:fragment slot="header">hello</svelte:fragment>
-	<svelte:fragment slot="pageHeader">Page Header</svelte:fragment>
+	<svelte:fragment slot="header"><AppBar class="text-3xl text-white font-mono" background="bg-tbp">Nothing Beats the Bell</AppBar></svelte:fragment>
+	
 	<svelte:fragment slot="sidebarLeft"
 		><AppRail selected={storeValue}>
 			<svelte:fragment slot="lead" />
@@ -30,7 +31,9 @@
 		</AppRail></svelte:fragment
 	>
 	<!-- Router Slot -->
-	<slot />
+	<div class="bg-gradient-to-b from-tbp to-purple-600 h-screen">
+		<slot />
+	</div>
 	<!-- ---- / ---- -->
 
 	<svelte:fragment slot="footer">Footer</svelte:fragment>
